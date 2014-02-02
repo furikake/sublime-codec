@@ -1,0 +1,10 @@
+[
+    { "keys": ["ctrl+super+y"], "command": "base64_encode", "args": {"encode_type": "b64encode"} },
+    { "keys": ["shift+super+y"], "command": "base64_encode", "args": {"encode_type": "b64decode"} },
+    { "keys": ["ctrl+super+u"], "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"} },
+    { "keys": ["shift+super+u"], "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"} },
+    { "keys": ["ctrl+super+i"], "command": "base64_encode", "args": {"encode_type": "b32encode"} },
+    { "keys": ["shift+super+i"], "command": "base64_encode", "args": {"encode_type": "b32decode"} },
+    { "keys": ["ctrl+super+o"], "command": "base64_encode", "args": {"encode_type": "b16encode"} },
+    { "keys": ["shift+super+o"], "command": "base64_encode", "args": {"encode_type": "b16decode"} },
+]
