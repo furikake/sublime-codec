@@ -1,0 +1,33 @@
+[
+    {
+        "id": "selection",
+        "children":
+        [
+            { "caption": "-" },
+            { 
+                "caption": "Base64",
+                "children":
+                [
+                    { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Base64 encode" },
+                    { "command": "base64_encode", "args": {"encode_type": "b64decode"}, "caption": "Base64 decode" },
+                    { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"}, "caption": "Base64 URL safe encode" },
+                    { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"}, "caption": "Base64 URL safe decode" },
+                    { "command": "base64_encode", "args": {"encode_type": "b32encode"}, "caption": "Base32 encode" },
+                    { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
+                    { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
+                    { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" },
+                ]
+            },
+            {
+                "caption": "URL Encode",
+                "children":
+                [
+                    { "command": "url_encode", "args": {"encode_type": "quote"}, "caption": "URL Encode" },
+                    { "command": "url_encode", "args": {"encode_type": "unquote"}, "caption": "URL Decode" },
+                    { "command": "url_encode", "args": {"encode_type": "quote_plus"}, "caption": "URL Encode Plus" },
+                    { "command": "url_encode", "args": {"encode_type": "unquote_plus"}, "caption": "URL Decode Plus" },
+                ]
+            },
+        ]
+    }
+]
