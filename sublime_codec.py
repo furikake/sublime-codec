@@ -32,9 +32,9 @@ class Base64EncodeCommand(sublime_plugin.TextCommand):
 
         for region in self.view.sel():
             if not region.empty():
-                orignal_string = self.view.substr(region)
-                # print("string: " + orignal_string)
-                encoded_string = base64_method(orignal_string.encode("UTF-8"))
+                original_string = self.view.substr(region)
+                # print("string: " + original_string)
+                encoded_string = base64_method(original_string.encode("UTF-8"))
                 # print("string encoded: " + str(encoded_string.decode("UTF-8")))
                 self.view.replace(edit, region, encoded_string.decode("UTF-8"))
 
@@ -62,9 +62,9 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
 
         for region in self.view.sel():
             if not region.empty():
-                orignal_string = self.view.substr(region)
-                # print("string: " + orignal_string)
-                encoded_string = urlencode_method(orignal_string)
+                original_string = self.view.substr(region)
+                # print("string: " + original_string)
+                encoded_string = urlencode_method(original_string)
                 # print("string encoded: " + encoded_string)
                 self.view.replace(edit, region, encoded_string)
 
