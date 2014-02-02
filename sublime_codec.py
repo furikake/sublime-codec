@@ -1,5 +1,6 @@
 import sublime, sublime_plugin
 import base64
+from urllib import parse
 
 """
 Sublime Text 3 Base64 Codec
@@ -34,6 +35,36 @@ class Base64EncodeCommand(sublime_plugin.TextCommand):
                 orignal_string = self.view.substr(region)
                 # print("string: " + orignal_string)
                 encoded_string = base64_method(orignal_string.encode("UTF-8"))
-                # print("string encoded: " + encoded_string.decode("UTF-8"))
+                # print("string encoded: " + str(encoded_string.decode("UTF-8")))
                 self.view.replace(edit, region, encoded_string.decode("UTF-8"))
+
+"""
+Sublime Text 3 URL Encoding (Percentage Encoding) Codec 
+
+日本語 encodes to %E6%97%A5%E6%9C%AC%E8%AA%9E
+"something with a space" encodes to "something%20with%20a%20space"
+
+>>> view.run_command('url_encode', {'encode_type': 'quote'})
+
+"""
+class UrlEncodeCommand(sublime_plugin.TextCommand):
+
+    ENCODE_TYPE = {
+        'quote': parse.quote,
+        'unquote': parse.unquote,
+        'quote_plus': parse.quote_plus,
+        'unquote_plus': parse.unquote_plus
+    }
+
+    def run(self, edit, encode_type='quote'):
+        urlencode_method = UrlEncodeCommand.ENCODE_TYPE[encode_type]
+        # print("using url encode method: " + str(urlencode_method))
+
+        for region in self.view.sel():
+            if not region.empty():
+                orignal_string = self.view.substr(region)
+                # print("string: " + orignal_string)
+                encoded_string = urlencode_method(orignal_string)
+                # print("string encoded: " + encoded_string)
+                self.view.replace(edit, region, encoded_string)
 
