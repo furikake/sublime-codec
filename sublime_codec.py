@@ -1,5 +1,7 @@
 import sublime, sublime_plugin
 import base64
+import hashlib
+
 from urllib import parse
 
 """
@@ -68,3 +70,35 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
                 # print("string encoded: " + encoded_string)
                 self.view.replace(edit, region, encoded_string)
 
+"""
+Sublime Text 3 Secure Hash Codec 
+
+日本語 hashes to SHA-256 as 77710aedc74ecfa33685e33a6c7df5cc83004da1bdcef7fb280f5c2b2e97e0a5
+
+>>> view.run_command('secure_hash', {'secure_hash_type': 'sha256'})
+
+"""
+class SecureHashCommand(sublime_plugin.TextCommand):
+
+    SECURE_HASH_TYPE = {
+        'md5': 'md5',
+        'sha1': 'sha1',
+        'sha224': 'sha224',
+        'sha256': 'sha256',
+        'sha384': 'sha384',
+        'sha512': 'sha512',
+    }
+
+    def run(self, edit, secure_hash_type='sha256'):
+        secure_hash_type = SecureHashCommand.SECURE_HASH_TYPE[secure_hash_type]
+        # print("using secure hash algorithm: " + secure_hash_type)
+
+        for region in self.view.sel():
+            if not region.empty():
+                original_string = self.view.substr(region)
+                # print("string: " + original_string)
+                hash_obj = hashlib.new(secure_hash_type)
+                hash_obj.update(original_string.encode("UTF-8"))
+                encoded_string = hash_obj.hexdigest()
+                # print("string encoded: " + str(encoded_string))
+                self.view.replace(edit, region, str(encoded_string))

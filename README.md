@@ -4,9 +4,9 @@ Provides a bunch of useful codecs to allow you to work with:
  - encode/decode base64 (standard and url safe)
  - encode/decode base32
  - encode/decode base16
-- RFC 1321 (TODO):
+- RFC 1321:
  - MD5
-- FIPS 180-2 (TODO):
+- FIPS 180-2:
  - SHA1
  - SHA224
  - SHA256

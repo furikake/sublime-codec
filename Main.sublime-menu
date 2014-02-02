@@ -6,6 +6,7 @@
             { "caption": "-" },
             { 
                 "caption": "Base64",
+                "mnemonic": "b",
                 "children":
                 [
                     { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Base64 encode" },
@@ -20,6 +21,7 @@
             },
             {
                 "caption": "URL Encode",
+                "mnemonic": "u",
                 "children":
                 [
                     { "command": "url_encode", "args": {"encode_type": "quote"}, "caption": "URL Encode" },
@@ -28,6 +30,19 @@
                     { "command": "url_encode", "args": {"encode_type": "unquote_plus"}, "caption": "URL Decode Plus" },
                 ]
             },
+            {
+                "caption": "Secure Hash",
+                "mnemonic": "h",
+                "children":
+                [
+                    { "command": "secure_hash", "args": {"secure_hash_type": "md5"}, "caption": "MD5" },
+                    { "command": "secure_hash", "args": {"secure_hash_type": "sha1"}, "caption": "SHA-1" },
+                    { "command": "secure_hash", "args": {"secure_hash_type": "sha224"}, "caption": "SHA-224" },
+                    { "command": "secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "SHA-256" },
+                    { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "SHA-384" },
+                    { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "SHA-512" },
+                ]                
+            }
         ]
     }
 ]
