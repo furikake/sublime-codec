@@ -1,23 +1,23 @@
 # Sublime Codec
 Provides a bunch of useful codecs to allow you to work with:
 - RFC 4648:
- - encode/decode base64 (standard and url safe)
- - encode/decode base32
- - encode/decode base16
+    - encode/decode base64 (standard and url safe)
+    - encode/decode base32
+    - encode/decode base16
 - RFC 1321:
- - MD5
+    - MD5
 - FIPS 180-2:
- - SHA1
- - SHA224
- - SHA256
- - SHA384
- - SHA512
+    - SHA-1
+    - SHA-224
+    - SHA-256
+    - SHA-384
+    - SHA-512
 - url encoding:
- - percent encoding
- - percent encoding plus
+    - percent encoding
+    - percent encoding plus
 
 ## Limitations
-Note that this plugin assumes that your file is UTF-8 encoded.
+- Note that this plugin assumes that your file is UTF-8 encoded.
 
 ## Installation
 
