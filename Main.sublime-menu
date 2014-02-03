@@ -6,7 +6,7 @@
             { "caption": "-" },
             { 
                 "caption": "Base64",
-                "mnemonic": "b",
+                "mnemonic": "B",
                 "children":
                 [
                     { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Base64 encode" },
@@ -21,7 +21,7 @@
             },
             {
                 "caption": "URL Encode",
-                "mnemonic": "u",
+                "mnemonic": "U",
                 "children":
                 [
                     { "command": "url_encode", "args": {"encode_type": "quote"}, "caption": "URL Encode" },
@@ -32,7 +32,7 @@
             },
             {
                 "caption": "Secure Hash",
-                "mnemonic": "h",
+                "mnemonic": "H",
                 "children":
                 [
                     { "command": "secure_hash", "args": {"secure_hash_type": "md5"}, "caption": "MD5" },
