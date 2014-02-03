@@ -20,9 +20,16 @@ Provides a bunch of useful codecs to allow you to work with:
 Note that this plugin assumes that your file is UTF-8 encoded.
 
 ## Installation
-TODO
+
+### Package Control
+Hopefully coming soon
+
+### Manual Install
+- Copy a release from https://github.com/furikake/sublime-codec/releases
+- Unzip files into `~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Codec` (or equivalent in Linux and Windows)
 
 ## Usage
 - Look in the selection menu
+- Look in command palette under `Codec` (```Shift+Super+P``` to bring up palette)
 - ```Ctrl+Super+Y``` to base64 encode
 - ```Shift+Super+Y``` to base64 decode
