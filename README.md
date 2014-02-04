@@ -1,5 +1,5 @@
-# Sublime Codec
-Provides a bunch of useful codecs to allow you to work with:
+# Sublime Codec for ST2 and ST3
+Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work with:
 - RFC 4648:
     - encode/decode base64 (standard and url safe)
     - encode/decode base32
@@ -12,9 +12,9 @@ Provides a bunch of useful codecs to allow you to work with:
     - SHA-256
     - SHA-384
     - SHA-512
-- url encoding:
-    - percent encoding
-    - percent encoding plus
+- URL encoding (percent encoding):
+    - URL encoding (classic)
+    - URL encoding (new school plus instead of ```%20``` method)
 
 ## Limitations
 - Note that this plugin assumes that your file is UTF-8 encoded.
@@ -22,7 +22,11 @@ Provides a bunch of useful codecs to allow you to work with:
 ## Installation
 
 ### Package Control
-Hopefully coming soon
+- Install Package Control https://sublime.wbond.net/installation
+- Pull up the command palette (```Shift+Super+P```)
+- Type `Package Control: Install Package` and press `return` key
+- Type `Codec` and press `return` key
+- Enjoy
 
 ### Manual Install
 - Copy a release from https://github.com/furikake/sublime-codec/releases
@@ -33,3 +37,4 @@ Hopefully coming soon
 - Look in command palette under `Codec` (```Shift+Super+P``` to bring up palette)
 - ```Ctrl+Super+Y``` to base64 encode
 - ```Shift+Super+Y``` to base64 decode
+
