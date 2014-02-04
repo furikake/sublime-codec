@@ -16,5 +16,5 @@
     { "command": "secure_hash", "args": {"secure_hash_type": "sha224"}, "caption": "Codec: SHA-224" },
     { "command": "secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "Codec: SHA-256" },
     { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "Codec: SHA-384" },
-    { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "Codec: SHA-512" },
+    { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "Codec: SHA-512" }
 ]

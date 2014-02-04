@@ -16,7 +16,7 @@
                     { "command": "base64_encode", "args": {"encode_type": "b32encode"}, "caption": "Base32 encode" },
                     { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
                     { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
-                    { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" },
+                    { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" }
                 ]
             },
             {
@@ -27,7 +27,7 @@
                     { "command": "url_encode", "args": {"encode_type": "quote"}, "caption": "URL Encode" },
                     { "command": "url_encode", "args": {"encode_type": "unquote"}, "caption": "URL Decode" },
                     { "command": "url_encode", "args": {"encode_type": "quote_plus"}, "caption": "URL Encode Plus" },
-                    { "command": "url_encode", "args": {"encode_type": "unquote_plus"}, "caption": "URL Decode Plus" },
+                    { "command": "url_encode", "args": {"encode_type": "unquote_plus"}, "caption": "URL Decode Plus" }
                 ]
             },
             {
@@ -40,7 +40,7 @@
                     { "command": "secure_hash", "args": {"secure_hash_type": "sha224"}, "caption": "SHA-224" },
                     { "command": "secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "SHA-256" },
                     { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "SHA-384" },
-                    { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "SHA-512" },
+                    { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "SHA-512" }
                 ]                
             }
         ]
