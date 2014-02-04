@@ -1,8 +1,16 @@
+# -*- coding: utf-8 -*-
 import sublime, sublime_plugin
 import base64
 import hashlib
 
-from urllib import parse
+PYTHON = 3
+
+try:
+    from urllib import parse
+except ImportError:
+    # Python 2 and ST2
+    PYTHON = 2
+    import urllib
 
 """
 Sublime Text 3 Base64 Codec
@@ -51,12 +59,20 @@ Sublime Text 3 URL Encoding (Percentage Encoding) Codec
 """
 class UrlEncodeCommand(sublime_plugin.TextCommand):
 
-    ENCODE_TYPE = {
-        'quote': parse.quote,
-        'unquote': parse.unquote,
-        'quote_plus': parse.quote_plus,
-        'unquote_plus': parse.unquote_plus
-    }
+    if 2 == PYTHON:
+        ENCODE_TYPE = {
+            'quote': urllib.quote,
+            'unquote': urllib.unquote,
+            'quote_plus': urllib.quote_plus,
+            'unquote_plus': urllib.unquote_plus
+        }
+    else:
+        ENCODE_TYPE = {
+            'quote': parse.quote,
+            'unquote': parse.unquote,
+            'quote_plus': parse.quote_plus,
+            'unquote_plus': parse.unquote_plus
+        }
 
     def run(self, edit, encode_type='quote'):
         urlencode_method = UrlEncodeCommand.ENCODE_TYPE[encode_type]
@@ -65,10 +81,14 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
         for region in self.view.sel():
             if not region.empty():
                 original_string = self.view.substr(region)
-                # print("string: " + original_string)
-                encoded_string = urlencode_method(original_string)
+                # print("string: " + original_string.encode("UTF-8"))
                 # print("string encoded: " + encoded_string)
-                self.view.replace(edit, region, encoded_string)
+                if 2 == PYTHON:
+                    encoded_string = urlencode_method(original_string.encode("UTF-8"))
+                    self.view.replace(edit, region, encoded_string.decode("UTF-8"))
+                else:
+                    encoded_string = urlencode_method(original_string)
+                    self.view.replace(edit, region, encoded_string)
 
 """
 Sublime Text 3 Secure Hash Codec 
