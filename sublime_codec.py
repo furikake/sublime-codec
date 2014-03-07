@@ -12,6 +12,20 @@ except ImportError:
     PYTHON = 2
     import urllib
 
+
+"""
+Pick up all the selections which is not empty.
+If no selection, make all the text in return selection.
+"""
+def SelectionsNotEmpty(view):
+    sels = [sel for sel in view.sel() if not sel.empty()]
+
+    if not sels:
+        sels = [sublime.Region(0, view.size())]
+
+    return sels
+
+
 """
 Sublime Text 3 Base64 Codec
 Assumes UTF-8 encoding
@@ -40,7 +54,7 @@ class Base64EncodeCommand(sublime_plugin.TextCommand):
         base64_method = Base64EncodeCommand.ENCODE_TYPE[encode_type]
         # print("using base64 method: " + str(base64_method))
 
-        for region in self.view.sel():
+        for region in SelectionsNotEmpty(self.view):
             if not region.empty():
                 original_string = self.view.substr(region)
                 # print("string: " + original_string)
@@ -78,7 +92,7 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
         urlencode_method = UrlEncodeCommand.ENCODE_TYPE[encode_type]
         # print("using url encode method: " + str(urlencode_method))
 
-        for region in self.view.sel():
+        for region in SelectionsNotEmpty(self.view):
             if not region.empty():
                 original_string = self.view.substr(region)
                 # print("string: " + original_string.encode("UTF-8"))
@@ -113,7 +127,7 @@ class SecureHashCommand(sublime_plugin.TextCommand):
         secure_hash_type = SecureHashCommand.SECURE_HASH_TYPE[secure_hash_type]
         # print("using secure hash algorithm: " + secure_hash_type)
 
-        for region in self.view.sel():
+        for region in SelectionsNotEmpty(self.view):
             if not region.empty():
                 original_string = self.view.substr(region)
                 # print("string: " + original_string)
