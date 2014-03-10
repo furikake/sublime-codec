@@ -22,6 +22,8 @@ def SelectionsNotEmpty(view):
 
     if not sels:
         sels = [sublime.Region(0, view.size())]
+    else:
+        sels = view.sel()
 
     return sels
 
