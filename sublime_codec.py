@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
-import sublime, sublime_plugin
 import base64
 import hashlib
+import sublime, sublime_plugin
+import sys
 
-PYTHON = 3
+PYTHON = sys.version_info[0]
 
-try:
+if 3 == PYTHON:
+    # Python 3 and ST3
     from urllib import parse
-except ImportError:
+else:
     # Python 2 and ST2
-    PYTHON = 2
     import urllib
-
 
 """
 Pick up all the selections which are not empty.
@@ -122,7 +122,7 @@ class SecureHashCommand(sublime_plugin.TextCommand):
         'sha224': 'sha224',
         'sha256': 'sha256',
         'sha384': 'sha384',
-        'sha512': 'sha512',
+        'sha512': 'sha512'
     }
 
     def run(self, edit, secure_hash_type='sha256'):
