@@ -1,0 +1,11 @@
+// This is the default settings for Codec. Override the settings in:
+// Packages/User/Codec.sublime-settings file.
+{
+	// Attempt to fix the padding on your Base64 encoded messages?
+	// Adds "=" to fill in the end and will strip line breaks.
+	"base64_fix_padding": false,
+
+        // Attempt to fix the padding on your Base32 encoded messages?
+        // Adds "=" to fill in the end and will strip line breaks.
+	"base32_fix_padding": false
+}
