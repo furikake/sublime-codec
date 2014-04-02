@@ -1,0 +1,12 @@
+Codec v0.2.2
+============
+
+Added
+-----
+
+* Fix padding for Base32 and Base64 decode
+    Some Base32 and Base64 messages don't have the necessary padding 
+    "=" (equals) and decoding these fail in Codec.  You can toggle this 
+    feature from Preferences\Package Settings\Codec
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
