@@ -1,7 +1,6 @@
 import base64
 
 def b64decode(s, add_padding=False, altchars=None):
-    
     new_s = s
 
     if add_padding:
@@ -10,7 +9,6 @@ def b64decode(s, add_padding=False, altchars=None):
     return base64.b64decode(new_s, altchars)
 
 def urlsafe_b64decode(s, add_padding=False):
-
     new_s = s
 
     if add_padding:
@@ -18,17 +16,27 @@ def urlsafe_b64decode(s, add_padding=False):
 
     return base64.urlsafe_b64decode(new_s)
 
-def fix_base64_padding(s):
-    new_s = s.decode("UTF-8").strip()
+def b32decode(s, add_padding=False, casefold=False, map01=None):
+    new_s = s
 
-    return (new_s + "=" * (len(str(new_s)) % 4)).encode("UTF-8")
+    if add_padding:
+        new_s = fix_base32_padding(s)
+
+    return base64.b32decode(new_s)
+
+def fix_base64_padding(s):
+    return fix_base_padding(s, pad_size=4)
 
 def fix_base32_padding(s):
-    ## TODO Implement
+    return fix_base_padding(s, pad_size=8)
+
+def fix_base_padding(s, pad_size=4):
     new_s = s.decode("UTF-8").strip()
 
-    return (new_s + "=" * (len(str(new_s)) % 8)).encode("UTF-8")
+    remaining = len(str(new_s)) % pad_size
+    if 0 == remaining:
+        padding = 0
+    else:
+        padding = pad_size - remaining
 
-def fix_base16_padding(s):
-    ## TODO Implement
-    pass
+    return (new_s + "=" * padding).encode("UTF-8")
