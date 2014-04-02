@@ -9,9 +9,13 @@ PYTHON = sys.version_info[0]
 if 3 == PYTHON:
     # Python 3 and ST3
     from urllib import parse
+    from . import codec_base64
 else:
     # Python 2 and ST2
     import urllib
+    import codec_base64
+
+SETTINGS_FILE = "Codec.sublime-settings"
 
 """
 Pick up all the selections which are not empty.
@@ -41,26 +45,41 @@ subjects?abcd encodes to url safe base64 as c3ViamVjdHM_YWJjZA==
 class Base64EncodeCommand(sublime_plugin.TextCommand):
 
     ENCODE_TYPE = {
-        'b64encode': base64.b64encode,
-        'b64decode': base64.b64decode,
-        'urlsafe_b64encode': base64.urlsafe_b64encode,
+        'b64decode': codec_base64.b64decode,
         'urlsafe_b64decode': base64.urlsafe_b64decode,
-        'b32encode': base64.b32encode,
-        'b32decode': base64.b32decode,
-        'b16encode': base64.b16encode,
-        'b16decode': base64.b16decode
     }
 
     def run(self, edit, encode_type='b64encode'):
 
-        base64_method = Base64EncodeCommand.ENCODE_TYPE[encode_type]
-        # print("using base64 method: " + str(base64_method))
+        fix_base32_padding = sublime.load_settings(SETTINGS_FILE).get("base32_fix_padding", False)
+        print("Codec: fix base32 padding? %s" % str(fix_base32_padding))
+        fix_base64_padding = sublime.load_settings(SETTINGS_FILE).get("base64_fix_padding", False)
+        print("Codec: fix base64 padding? %s" % str(fix_base64_padding))
 
         for region in selected_regions(self.view):
             if not region.empty():
                 original_string = self.view.substr(region)
                 # print("string: " + original_string)
-                encoded_string = base64_method(original_string.encode("UTF-8"))
+                if 'b64encode' == encode_type:
+                    encoded_string = base64.b64encode(original_string.encode("UTF-8"))
+                elif 'b64decode' == encode_type:
+                    encoded_string = codec_base64.b64decode(original_string.encode("UTF-8"), add_padding=fix_base64_padding)                    
+                elif 'urlsafe_b64encode' == encode_type:
+                    encoded_string = base64.urlsafe_b64encode(original_string.encode("UTF-8"))
+                elif 'urlsafe_b64decode' == encode_type:
+                    encoded_string = codec_base64.urlsafe_b64decode(original_string.encode("UTF-8"), add_padding=fix_base64_padding)
+                elif 'b32encode' == encode_type:
+                    encoded_string = base64.b32encode(original_string.encode("UTF-8"))
+                elif 'b32decode' == encode_type:
+                    encoded_string = codec_base64.b32decode(original_string.encode("UTF-8"), add_padding=fix_base32_padding)
+                elif 'b16encode' == encode_type:
+                    encoded_string = base64.b16encode(original_string.encode("UTF-8"))
+                elif 'b16decode' == encode_type:
+                    encoded_string = base64.b16decode(original_string.encode("UTF-8"))
+                else:
+                    print("unsupported operation %s" % (encode_type,))
+                    break
+
                 # print("string encoded: " + str(encoded_string.decode("UTF-8")))
                 self.view.replace(edit, region, encoded_string.decode("UTF-8"))
 
