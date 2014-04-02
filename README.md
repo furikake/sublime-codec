@@ -3,7 +3,7 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
 - RFC 4648:
     - encode/decode base64 (standard and url safe)
     - encode/decode base32
-    - encode/decode base16
+    - encode/decode base16 (hex)
 - RFC 1321:
     - MD5
 - FIPS 180-2:
@@ -12,7 +12,7 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
     - SHA-256
     - SHA-384
     - SHA-512
-- URL encoding (percent encoding):
+- RFC 3986 URL encoding (percent encoding):
     - URL encoding (classic)
     - URL encoding (new school plus instead of ```%20``` method)
 
@@ -37,4 +37,3 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
 - Look in command palette under `Codec` (```Shift+Super+P``` to bring up palette)
 - ```Ctrl+Super+Y``` to base64 encode
 - ```Shift+Super+Y``` to base64 decode
-
