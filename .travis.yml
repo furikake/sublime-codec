@@ -1,0 +1,30 @@
+language: python
+python:
+  - "2.7"
+  # - "3.3"
+env:
+  - SUBLIME_TEXT_VERSION="2"
+  - SUBLIME_TEXT_VERSION="3"
+
+install:
+  # Install Sublime Text and output version
+  - curl https://raw.github.com/twolfson/sublime-installer/0.1.1/install.sh | sh -s $SUBLIME_TEXT_VERSION
+  - subl --version
+
+  # Install dependencies
+  - pip install -r requirements.txt
+
+before_script:
+  # Generate a screen buffer to collect Sublime Text window
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+  # Ensure the scripts self-terminate
+  - export SUBLIME_AUTO_KILL=TRUE
+
+script:
+  # Run our tests
+  - ./test.sh
+
+notifications:
+  email: false

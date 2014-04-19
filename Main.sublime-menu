@@ -42,7 +42,17 @@
                     { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "SHA-384" },
                     { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "SHA-512" }
                 ]                
+            },
+            {
+                "caption": "XML",
+                "mnemonic": "X",
+                "children":
+                [
+                    { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
+                    { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
+                ]
             }
+
         ]
     },
     {
