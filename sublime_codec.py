@@ -10,10 +10,12 @@ if 3 == PYTHON:
     # Python 3 and ST3
     from urllib import parse
     from . import codec_base64
+    from . import codec_xml
 else:
     # Python 2 and ST2
     import urllib
     import codec_base64
+    import codec_xml
 
 SETTINGS_FILE = "Codec.sublime-settings"
 
@@ -157,3 +159,31 @@ class SecureHashCommand(sublime_plugin.TextCommand):
                 encoded_string = hash_obj.hexdigest()
                 # print("string encoded: " + str(encoded_string))
                 self.view.replace(edit, region, str(encoded_string))
+
+"""
+Escapes and unescapes the 5 standard XML predefined entities
+
+<hello>T'was a dark & "stormy" night</hello>
+escapes to
+&lt;hello&gt;T&apos;was a dark &amp; &quot;stormy&quot; night&lt;/hello&gt;
+
+>>> view.run_command('xml', {'encode_type': 'escape'})
+"""
+class XmlCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='escape'):
+        method = self.get_method(encode_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                new_string = method(original_string)
+                self.view.replace(edit, region, new_string)
+
+    def get_method(self, encode_type):
+        if 'escape' == encode_type:
+            return codec_xml.escape
+        elif 'unescape' == encode_type:
+            return codec_xml.unescape
+        else:
+            raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
