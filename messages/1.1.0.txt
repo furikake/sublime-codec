@@ -1,0 +1,9 @@
+Codec v1.1.0
+============
+
+Added
+-----
+
+* Small update to support XML escape and unescape
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
