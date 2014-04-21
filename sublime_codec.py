@@ -11,11 +11,13 @@ if 3 == PYTHON:
     from urllib import parse
     from . import codec_base64
     from . import codec_xml
+    from . import codec_json
 else:
     # Python 2 and ST2
     import urllib
     import codec_base64
     import codec_xml
+    import codec_json
 
 SETTINGS_FILE = "Codec.sublime-settings"
 
@@ -185,5 +187,35 @@ class XmlCommand(sublime_plugin.TextCommand):
             return codec_xml.escape
         elif 'unescape' == encode_type:
             return codec_xml.unescape
+        else:
+            raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
+
+"""
+Encodes and decodes JSON
+
+T'was a dark & "stormy" night in 日本
+encodes to
+"T'was a dark & \"stormy\" night in 日本"
+
+>>> view.run_command('json', {'encode_type': 'encode'})
+"""
+class JsonCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='encode'):
+        method = self.get_method(encode_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                new_string = method(original_string)
+                self.view.replace(edit, region, new_string)
+
+    def get_method(self, encode_type):
+        if 'encode' == encode_type:
+            return codec_json.encode
+        elif 'encode_ensure_ascii' == encode_type:
+            return codec_json.encode_ensure_ascii
+        elif 'decode' == encode_type:
+            return codec_json.decode
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))

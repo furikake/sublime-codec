@@ -1,0 +1,10 @@
+Codec v1.2.0
+============
+
+Added
+-----
+
+* JSON encode/decode
+* 
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
