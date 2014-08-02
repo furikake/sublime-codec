@@ -17,6 +17,11 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
     - URL encoding (new school plus instead of ```%20``` method)
 - RFC 1522:
     - encode/decode MIME quoted-printable
+- Extensible Markup Language (XML) 1.0 (Fifth Edition):
+    - escape/unescape character decoding
+- RFC 4627:
+    - JSON encoding/decode
+    - JSON encoding with escaped Unicode
 
 ## Limitations
 - Note that this plugin assumes that your file is UTF-8 encoded.

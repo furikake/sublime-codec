@@ -44,6 +44,16 @@
                 ]                
             },
             {
+                "caption": "JSON",
+                "mnemonic": "J",
+                "children":
+                [
+                    { "command": "json", "args": {"encode_type": "encode"}, "caption": "JSON encode" },
+                    { "command": "json", "args": {"encode_type": "encode_ensure_ascii"}, "caption": "JSON encode as ASCII" },
+                    { "command": "json", "args": {"encode_type": "decode"}, "caption": "JSON decode" }
+                ]
+            },
+            {
                 "caption": "XML",
                 "mnemonic": "X",
                 "children":
