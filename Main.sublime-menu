@@ -51,8 +51,16 @@
                     { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
                     { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
                 ]
+            },
+            {
+                "caption": "Quoted-Printable",
+                "mnemonic": "Q",
+                "children":
+                [
+                    { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Codec: Quoted Printable encode" },
+                    { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted Printable encode" }
+                ]
             }
-
         ]
     },
     {
