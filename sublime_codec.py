@@ -190,6 +190,16 @@ class XmlCommand(sublime_plugin.TextCommand):
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
 
+"""
+Encodes and decodes Quoted-Printable strings
+
+This is a really long line to test whether "quoted-printable" works correctly when using 日本語 and 英語
+encodes to
+This is a really long line to test whether "quoted-printable" works correct=
+ly when using =E6=97=A5=E6=9C=AC=E8=AA=9E and =E8=8B=B1=E8=AA=9E
+
+>>> view.run_command('quoted_printable', {'encode_type': 'encode'})
+"""
 class QuotedPrintableCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, encode_type='encode'):
@@ -198,8 +208,8 @@ class QuotedPrintableCommand(sublime_plugin.TextCommand):
         for region in selected_regions(self.view):
             if not region.empty():
                 original_string = self.view.substr(region)
-                new_string = method(original_string)
-                self.view.replace(edit, region, new_string)
+                encoded_string = method(original_string.encode("UTF-8"))
+                self.view.replace(edit, region, encoded_string.decode("UTF-8"))
 
     def get_method(self, encode_type):
         if 'encode' == encode_type:
