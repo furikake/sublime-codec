@@ -5,6 +5,6 @@ Added
 -----
 
 * JSON encode/decode
-* 
+* Quoted-Printable encode/decode
 
 Please report bugs here: https://github.com/furikake/sublime-codec/issues
