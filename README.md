@@ -15,6 +15,8 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
 - RFC 3986 URL encoding (percent encoding):
     - URL encoding (classic)
     - URL encoding (new school plus instead of ```%20``` method)
+- RFC 1522:
+    - encode/decode MIME quoted-printable
 
 ## Limitations
 - Note that this plugin assumes that your file is UTF-8 encoded.

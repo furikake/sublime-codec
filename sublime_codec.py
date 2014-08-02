@@ -11,11 +11,13 @@ if 3 == PYTHON:
     from urllib import parse
     from . import codec_base64
     from . import codec_xml
+    from . import codec_quopri
 else:
     # Python 2 and ST2
     import urllib
     import codec_base64
     import codec_xml
+    import codec_quopri
 
 SETTINGS_FILE = "Codec.sublime-settings"
 
@@ -185,5 +187,34 @@ class XmlCommand(sublime_plugin.TextCommand):
             return codec_xml.escape
         elif 'unescape' == encode_type:
             return codec_xml.unescape
+        else:
+            raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
+
+"""
+Encodes and decodes Quoted-Printable strings
+
+This is a really long line to test whether "quoted-printable" works correctly when using 日本語 and 英語
+encodes to
+This is a really long line to test whether "quoted-printable" works correct=
+ly when using =E6=97=A5=E6=9C=AC=E8=AA=9E and =E8=8B=B1=E8=AA=9E
+
+>>> view.run_command('quoted_printable', {'encode_type': 'encode'})
+"""
+class QuotedPrintableCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='encode'):
+        method = self.get_method(encode_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                encoded_string = method(original_string.encode("UTF-8"))
+                self.view.replace(edit, region, encoded_string.decode("UTF-8"))
+
+    def get_method(self, encode_type):
+        if 'encode' == encode_type:
+            return codec_quopri.encodestring
+        elif 'decode' == encode_type:
+            return codec_quopri.decodestring
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))

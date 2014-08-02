@@ -18,5 +18,7 @@
     { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "Codec: SHA-384" },
     { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "Codec: SHA-512" },
     { "command": "xml", "args": {"encode_type": "escape"}, "caption": "Codec: XML escape" },
-    { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "Codec: XML unescape" }
+    { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "Codec: XML unescape" },
+    { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Codec: Quoted Printable encode" },
+    { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted Printable encode" }
 ]
