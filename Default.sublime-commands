@@ -22,6 +22,6 @@
     { "command": "json", "args": {"encode_type": "decode"}, "caption": "Codec: JSON decode" },
     { "command": "xml", "args": {"encode_type": "escape"}, "caption": "Codec: XML escape" },
     { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "Codec: XML unescape" },
-    { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Codec: Quoted Printable encode" },
-    { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted Printable encode" }
+    { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Codec: Quoted-Printable encode" },
+    { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted-Printable decode" }
 ]

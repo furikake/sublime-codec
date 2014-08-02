@@ -4,71 +4,78 @@
         "children":
         [
             { "caption": "-" },
-            { 
-                "caption": "Base64",
-                "mnemonic": "B",
-                "children":
-                [
-                    { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Base64 encode" },
-                    { "command": "base64_encode", "args": {"encode_type": "b64decode"}, "caption": "Base64 decode" },
-                    { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"}, "caption": "Base64 URL safe encode" },
-                    { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"}, "caption": "Base64 URL safe decode" },
-                    { "command": "base64_encode", "args": {"encode_type": "b32encode"}, "caption": "Base32 encode" },
-                    { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
-                    { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
-                    { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" }
-                ]
-            },
             {
-                "caption": "URL Encode",
-                "mnemonic": "U",
+                "caption": "Codec",
+                "mnemonic": "C",
                 "children":
                 [
-                    { "command": "url_encode", "args": {"encode_type": "quote"}, "caption": "URL Encode" },
-                    { "command": "url_encode", "args": {"encode_type": "unquote"}, "caption": "URL Decode" },
-                    { "command": "url_encode", "args": {"encode_type": "quote_plus"}, "caption": "URL Encode Plus" },
-                    { "command": "url_encode", "args": {"encode_type": "unquote_plus"}, "caption": "URL Decode Plus" }
-                ]
-            },
-            {
-                "caption": "Secure Hash",
-                "mnemonic": "H",
-                "children":
-                [
-                    { "command": "secure_hash", "args": {"secure_hash_type": "md5"}, "caption": "MD5" },
-                    { "command": "secure_hash", "args": {"secure_hash_type": "sha1"}, "caption": "SHA-1" },
-                    { "command": "secure_hash", "args": {"secure_hash_type": "sha224"}, "caption": "SHA-224" },
-                    { "command": "secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "SHA-256" },
-                    { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "SHA-384" },
-                    { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "SHA-512" }
-                ]                
-            },
-            {
-                "caption": "JSON",
-                "mnemonic": "J",
-                "children":
-                [
-                    { "command": "json", "args": {"encode_type": "encode"}, "caption": "JSON encode" },
-                    { "command": "json", "args": {"encode_type": "encode_ensure_ascii"}, "caption": "JSON encode as ASCII" },
-                    { "command": "json", "args": {"encode_type": "decode"}, "caption": "JSON decode" }
-                ]
-            },
-            {
-                "caption": "XML",
-                "mnemonic": "X",
-                "children":
-                [
-                    { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
-                    { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
-                ]
-            },
-            {
-                "caption": "Quoted-Printable",
-                "mnemonic": "Q",
-                "children":
-                [
-                    { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Codec: Quoted Printable encode" },
-                    { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted Printable encode" }
+                    { 
+                        "caption": "Base64",
+                        "mnemonic": "B",
+                        "children":
+                        [
+                            { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Base64 encode" },
+                            { "command": "base64_encode", "args": {"encode_type": "b64decode"}, "caption": "Base64 decode" },
+                            { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"}, "caption": "Base64 URL safe encode" },
+                            { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"}, "caption": "Base64 URL safe decode" },
+                            { "command": "base64_encode", "args": {"encode_type": "b32encode"}, "caption": "Base32 encode" },
+                            { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
+                            { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
+                            { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" }
+                        ]
+                    },
+                    {
+                        "caption": "JSON",
+                        "mnemonic": "J",
+                        "children":
+                        [
+                            { "command": "json", "args": {"encode_type": "encode"}, "caption": "JSON encode" },
+                            { "command": "json", "args": {"encode_type": "encode_ensure_ascii"}, "caption": "JSON encode as ASCII" },
+                            { "command": "json", "args": {"encode_type": "decode"}, "caption": "JSON decode" }
+                        ]
+                    },
+                    {
+                        "caption": "Quoted-Printable",
+                        "mnemonic": "Q",
+                        "children":
+                        [
+                            { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Quoted-Printable encode" },
+                            { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Quoted-Printable encode" }
+                        ]
+                    },
+                    {
+                        "caption": "Secure Hash",
+                        "mnemonic": "H",
+                        "children":
+                        [
+                            { "command": "secure_hash", "args": {"secure_hash_type": "md5"}, "caption": "MD5" },
+                            { "command": "secure_hash", "args": {"secure_hash_type": "sha1"}, "caption": "SHA-1" },
+                            { "command": "secure_hash", "args": {"secure_hash_type": "sha224"}, "caption": "SHA-224" },
+                            { "command": "secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "SHA-256" },
+                            { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "SHA-384" },
+                            { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "SHA-512" }
+                        ]                
+                    },
+                    {
+                        "caption": "URL Encode",
+                        "mnemonic": "U",
+                        "children":
+                        [
+                            { "command": "url_encode", "args": {"encode_type": "quote"}, "caption": "URL Encode" },
+                            { "command": "url_encode", "args": {"encode_type": "unquote"}, "caption": "URL Decode" },
+                            { "command": "url_encode", "args": {"encode_type": "quote_plus"}, "caption": "URL Encode Plus" },
+                            { "command": "url_encode", "args": {"encode_type": "unquote_plus"}, "caption": "URL Decode Plus" }
+                        ]
+                    },
+                    {
+                        "caption": "XML",
+                        "mnemonic": "X",
+                        "children":
+                        [
+                            { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
+                            { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
+                        ]
+                    }
                 ]
             }
         ]
