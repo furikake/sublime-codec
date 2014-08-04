@@ -40,7 +40,7 @@
                         "children":
                         [
                             { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Quoted-Printable encode" },
-                            { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Quoted-Printable encode" }
+                            { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Quoted-Printable decode" }
                         ]
                     },
                     {
