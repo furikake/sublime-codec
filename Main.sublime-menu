@@ -75,6 +75,15 @@
                             { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
                             { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
                         ]
+                    },
+                    {
+                        "caption": "Hex",
+                        "mnemonic": "C",
+                        "children":
+                        [
+                            { "command": "c_hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode" },
+                            { "command": "c_hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode" }
+                        ]
                     }
                 ]
             }

@@ -13,6 +13,7 @@ if 3 == PYTHON:
     from . import codec_xml
     from . import codec_json
     from . import codec_quopri
+    from . import codec_hex
 else:
     # Python 2 and ST2
     import urllib
@@ -20,6 +21,7 @@ else:
     import codec_xml
     import codec_json
     import codec_quopri
+    import codec_hex
 
 SETTINGS_FILE = "Codec.sublime-settings"
 
@@ -248,5 +250,34 @@ class JsonCommand(sublime_plugin.TextCommand):
             return codec_json.encode_ensure_ascii
         elif 'decode' == encode_type:
             return codec_json.decode
+        else:
+            raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
+
+
+"""
+Encodes and decodes C-style hex representations of bytes
+
+Hello, my good friend
+encodes to
+\\x48\\x65\\x6c\\x6c\\x6f\\x2c\\x20\\x6d\\x79\\x20\\x67\\x6f\\x6f\\x64\\x20\\x66\\x72\\x69\\x65\\x6e\\x64\\x21
+
+>>> view.run_command('c_hex', {'encode_type': 'encode'})
+"""
+class HexCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='encode'):
+        method = self.get_method(encode_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                new_string = method(original_string)
+                self.view.replace(edit, region, new_string)
+
+    def get_method(self, encode_type):
+        if 'encode' == encode_type:
+            return codec_hex.encodeHex
+        elif 'decode' == encode_type:
+            return codec_hex.decodeHex
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
