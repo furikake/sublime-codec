@@ -81,8 +81,8 @@
                         "mnemonic": "C",
                         "children":
                         [
-                            { "command": "c_hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode" },
-                            { "command": "c_hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode" }
+                            { "command": "hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode" },
+                            { "command": "hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode" }
                         ]
                     }
                 ]
