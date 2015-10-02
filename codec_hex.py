@@ -9,5 +9,9 @@ def decodeHex(hexstring):
     return r_hex.sub(func, hexstring)
 
 def encodeHex(string):
+    for c in string:
+        if ord(c) > 255:
+            # non-ascii not supported yet.
+            return string 
     return ''.join(('\\x{0:02x}'.format(ord(char)) for char in string))
 
