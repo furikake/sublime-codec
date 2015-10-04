@@ -75,6 +75,15 @@
                             { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
                             { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
                         ]
+                    },
+                    {
+                        "caption": "Code Point",
+                        "mnemonic": "C",
+                        "children":
+                        [
+                            { "command": "hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode (ascii)" },
+                            { "command": "hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode (ascii)" }
+                        ]
                     }
                 ]
             }

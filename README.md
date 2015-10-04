@@ -22,6 +22,7 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
 - RFC 4627:
     - JSON encoding/decode
     - JSON encoding with escaped Unicode
+- C-style byte strings
 
 ## Limitations
 - Note that this plugin assumes that your file is UTF-8 encoded.
