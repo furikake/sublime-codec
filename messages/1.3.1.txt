@@ -1,0 +1,16 @@
+Codec v1.3.1
+============
+
+Added
+-----
+
+* C style hex character encoding (ASCII only for now) - Thanks @iffy
+* Ability to set safe character lists in URL encoding (check preferences/package preferences/codec)
+
+Fixed
+-----
+
+* Release notes
+
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
