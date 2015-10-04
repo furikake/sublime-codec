@@ -10,7 +10,7 @@
                 "children":
                 [
                     { 
-                        "caption": "Base64",
+                        "caption": "BaseXX (16, 32, 64)",
                         "mnemonic": "B",
                         "children":
                         [
@@ -22,6 +22,15 @@
                             { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
                             { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
                             { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" }
+                        ]
+                    },
+                    {
+                        "caption": "Code Point",
+                        "mnemonic": "C",
+                        "children":
+                        [
+                            { "command": "hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode (ascii)" },
+                            { "command": "hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode (ascii)" }
                         ]
                     },
                     {
@@ -74,15 +83,6 @@
                         [
                             { "command": "xml", "args": {"encode_type": "escape"}, "caption": "XML escape" },
                             { "command": "xml", "args": {"encode_type": "unescape"}, "caption": "XML unescape" }
-                        ]
-                    },
-                    {
-                        "caption": "Code Point",
-                        "mnemonic": "C",
-                        "children":
-                        [
-                            { "command": "hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode (ascii)" },
-                            { "command": "hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode (ascii)" }
                         ]
                     }
                 ]

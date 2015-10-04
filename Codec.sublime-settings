@@ -7,5 +7,13 @@
 
 	// Attempt to fix the padding on your Base32 encoded messages?
 	// Adds "=" to fill in the end and will strip line breaks.
-	"base32_fix_padding": false
+	"base32_fix_padding": false,
+
+	// Override the safe character list in "URL Encode" with a list of characters not to encode
+	// If you don't want ~ and / encoded then set to:
+	//"url_encoding_safe": "/~"
+	// Encode everything
+	//"url_encoding_safe": ""
+	// If you don't want / encoded (default behaviour):
+	"url_encoding_safe": "/"
 }

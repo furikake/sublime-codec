@@ -118,6 +118,9 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
         }
 
     def run(self, edit, encode_type='quote'):
+        safe_characters = str(sublime.load_settings(SETTINGS_FILE).get("url_encoding_safe", "/"))
+        print("Codec: safe url characters? %s" % str(safe_characters))
+
         urlencode_method = UrlEncodeCommand.ENCODE_TYPE[encode_type]
         # print("using url encode method: " + str(urlencode_method))
 
@@ -127,10 +130,10 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
                 # print("string: " + original_string.encode("UTF-8"))
                 # print("string encoded: " + encoded_string)
                 if 2 == PYTHON:
-                    encoded_string = urlencode_method(original_string.encode("UTF-8"))
+                    encoded_string = urlencode_method(original_string.encode("UTF-8"), safe=safe_characters)
                     self.view.replace(edit, region, encoded_string.decode("UTF-8"))
                 else:
-                    encoded_string = urlencode_method(original_string)
+                    encoded_string = urlencode_method(original_string, safe=safe_characters)
                     self.view.replace(edit, region, encoded_string)
 
 """
