@@ -130,10 +130,18 @@ class UrlEncodeCommand(sublime_plugin.TextCommand):
                 # print("string: " + original_string.encode("UTF-8"))
                 # print("string encoded: " + encoded_string)
                 if 2 == PYTHON:
-                    encoded_string = urlencode_method(original_string.encode("UTF-8"), safe=safe_characters)
+                    try:
+                        encoded_string = urlencode_method(original_string.encode("UTF-8"), safe=safe_characters)
+                    except TypeError:
+                        # FIXME - time to separate quote and unquote to avoid this kind of errors.
+                        encoded_string = urlencode_method(original_string.encode("UTF-8"))
                     self.view.replace(edit, region, encoded_string.decode("UTF-8"))
                 else:
-                    encoded_string = urlencode_method(original_string, safe=safe_characters)
+                    try:
+                        encoded_string = urlencode_method(original_string, safe=safe_characters)
+                    except TypeError:
+                        # FIXME - time to separate quote and unquote to avoid this kind of errors.
+                        encoded_string = urlencode_method(original_string)
                     self.view.replace(edit, region, encoded_string)
 
 """

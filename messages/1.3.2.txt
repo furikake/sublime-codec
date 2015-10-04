@@ -1,0 +1,10 @@
+Codec v1.3.2
+============
+
+Fixed
+-----
+
+* Decoding bug introduced in v1.3.0 for safe URL characters
+
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
