@@ -34,6 +34,17 @@
                         ]
                     },
                     {
+                        "caption": "IDN",
+                        "mnemonic": "I",
+                        "children":
+                        [
+                            { "command": "idn", "args": {"encode_type": "punycode_encode"}, "caption": "Punycode encode" },
+                            { "command": "idn", "args": {"encode_type": "punycode_decode"}, "caption": "Punycode decode" },
+                            { "command": "idn", "args": {"encode_type": "idna_encode"}, "caption": "IDNA encode" },
+                            { "command": "idn", "args": {"encode_type": "idna_decode"}, "caption": "IDNA decode" }
+                        ]
+                    },
+                    {
                         "caption": "JSON",
                         "mnemonic": "J",
                         "children":

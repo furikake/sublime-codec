@@ -25,5 +25,9 @@
     { "command": "quoted_printable", "args": {"encode_type": "encode"}, "caption": "Codec: Quoted-Printable encode" },
     { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted-Printable decode" },
     { "command": "hex", "args": {"encode_type": "encode"}, "caption": "Codec: C-style Hex encode (ascii)" },
-    { "command": "hex", "args": {"encode_type": "decode"}, "caption": "Codec: C-style Hex decode (ascii)" }
+    { "command": "hex", "args": {"encode_type": "decode"}, "caption": "Codec: C-style Hex decode (ascii)" },
+    { "command": "idn", "args": {"encode_type": "punycode_encode"}, "caption": "Codec: Punycode encode" },
+    { "command": "idn", "args": {"encode_type": "punycode_decode"}, "caption": "Codec: Punycode decode" },
+    { "command": "idn", "args": {"encode_type": "idna_encode"}, "caption": "Codec: IDN encode" },
+    { "command": "idn", "args": {"encode_type": "idna_decode"}, "caption": "Codec: IDN decode" }
 ]

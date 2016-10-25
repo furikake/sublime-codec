@@ -14,6 +14,7 @@ if 3 == PYTHON:
     from . import codec_json
     from . import codec_quopri
     from . import codec_hex
+    from . import codec_idn
 else:
     # Python 2 and ST2
     import urllib
@@ -22,6 +23,7 @@ else:
     import codec_json
     import codec_quopri
     import codec_hex
+    import codec_idn
 
 SETTINGS_FILE = "Codec.sublime-settings"
 
@@ -287,8 +289,31 @@ class HexCommand(sublime_plugin.TextCommand):
 
     def get_method(self, encode_type):
         if 'encode' == encode_type:
-            return codec_hex.encodeHex
+            return codec_hex.encode_hex
         elif 'decode' == encode_type:
-            return codec_hex.decodeHex
+            return codec_hex.decode_hex
+        else:
+            raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
+
+class IdnCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='punycode_encode'):
+        method = self.get_method(encode_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                new_string = method(original_string)
+                self.view.replace(edit, region, new_string)
+
+    def get_method(self, encode_type):
+        if 'punycode_encode' == encode_type:
+            return codec_idn.punycode_encode
+        elif 'punycode_decode' == encode_type:
+            return codec_idn.punycode_decode
+        elif 'idna_encode' == encode_type:
+            return codec_idn.idna_encode
+        elif 'idna_decode' == encode_type:
+            return codec_idn.idna_decode
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))

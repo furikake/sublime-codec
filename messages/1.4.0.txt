@@ -1,0 +1,10 @@
+Codec v1.4.0
+============
+
+Added
+-----
+
+* Punycode encoding/decoding - 'München' becomes 'Mnchen-3ya'
+* International Domain Names in Applications (IDNA) - 'München' becomes 'xn--mnchen-3ya' (case insensitive)
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues

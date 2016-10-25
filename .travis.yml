@@ -8,7 +8,7 @@ env:
 
 install:
   # Install Sublime Text and output version
-  - curl -L https://raw.githubusercontent.com/twolfson/sublime-installer/0.1.1/install.sh | sh -s $SUBLIME_TEXT_VERSION
+  - curl -L https://rawgit.com/twolfson/sublime-installer/0.2.2/install.sh | sh -s "$SUBLIME_TEXT_VERSION"
   - subl --version
 
   # Install dependencies
