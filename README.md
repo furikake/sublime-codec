@@ -23,6 +23,10 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
     - JSON encoding/decode
     - JSON encoding with escaped Unicode
 - C-style byte strings
+- RFC 3490:
+    - International Domain Names in Applications (IDNA)
+- RFC 3492:
+    - Punycode
 
 ## Limitations
 - Note that this plugin assumes that your file is UTF-8 encoded.
