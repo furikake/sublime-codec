@@ -19,8 +19,6 @@ class TestJsonEncoding(unittest.TestCase):
         self.assertEquals(expected, codec_json.encode_ensure_ascii(input))
 
     def test_decode(self):
-        expected = "T'was a dark & \"stormy\" night in 日本\n\nblah blah!".decode("UTF-8")
+        expected = "T'was a dark & \"stormy\" night in 日本\n\nblah blah!"
         input = "\"T'was a dark & \\\"stormy\\\" night in 日本\\n\\nblah blah!\""
         self.assertEquals(expected, codec_json.decode(input))
-
-

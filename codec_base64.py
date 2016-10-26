@@ -1,28 +1,31 @@
 import base64
 
 def b64decode(s, add_padding=False, altchars=None):
-    new_s = s
-
-    if add_padding:
-        new_s = fix_base64_padding(new_s)
-
-    return base64.b64decode(new_s, altchars)
-
-def urlsafe_b64decode(s, add_padding=False):
-    new_s = s
 
     if add_padding:
         new_s = fix_base64_padding(s)
+    else:
+        new_s = s
 
-    return base64.urlsafe_b64decode(new_s)
+    return base64.b64decode(new_s, altchars).decode('UTF-8').encode('UTF-8')
 
-def b32decode(s, add_padding=False, casefold=False, map01=None):
-    new_s = s
+def urlsafe_b64decode(s, add_padding=False):
 
     if add_padding:
-        new_s = fix_base32_padding(s)
+        new_s = fix_base64_padding(s)
+    else:
+        new_s = s
 
-    return base64.b32decode(new_s)
+    return base64.urlsafe_b64decode(new_s).decode('UTF-8').encode('UTF-8')
+
+def b32decode(s, add_padding=False, casefold=False, map01=None):
+    
+    if add_padding:
+        new_s = fix_base32_padding(s)
+    else:
+        new_s = s
+
+    return base64.b32decode(new_s).decode('UTF-8').encode('UTF-8')
 
 def fix_base64_padding(s):
     return fix_base_padding(s, pad_size=4)
