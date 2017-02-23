@@ -40,8 +40,14 @@
                         [
                             { "command": "idn", "args": {"encode_type": "punycode_encode"}, "caption": "Punycode encode" },
                             { "command": "idn", "args": {"encode_type": "punycode_decode"}, "caption": "Punycode decode" },
-                            { "command": "idn", "args": {"encode_type": "idna_encode"}, "caption": "IDNA encode" },
-                            { "command": "idn", "args": {"encode_type": "idna_decode"}, "caption": "IDNA decode" }
+                            { "command": "idn", "args": {"encode_type": "idna_encode"}, "caption": "IDNA 2003 encode" },
+                            { "command": "idn", "args": {"encode_type": "idna_decode"}, "caption": "IDNA 2003 decode" },
+                            { "command": "idn", "args": {"encode_type": "idna2008_encode"}, "caption": "IDNA 2008 encode" },
+                            { "command": "idn", "args": {"encode_type": "idna2008_decode"}, "caption": "IDNA 2008 decode" },
+                            { "command": "idn", "args": {"encode_type": "idna2008uts46_encode"}, "caption": "IDNA 2008 (UTS46) encode" },
+                            { "command": "idn", "args": {"encode_type": "idna2008uts46_decode"}, "caption": "IDNA 2008 (UTS46) decode" },
+                            { "command": "idn", "args": {"encode_type": "idna2008transitional_encode"}, "caption": "IDNA 2008 (transitional) encode" },
+                            { "command": "idn", "args": {"encode_type": "idna2008transitional_decode"}, "caption": "IDNA 2008 (transitional) decode" }
                         ]
                     },
                     {

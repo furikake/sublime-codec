@@ -1,0 +1,10 @@
+Codec v1.4.1
+============
+
+Added
+-----
+
+* IDNA 2008
+    Powered by https://github.com/kjd/idna
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues

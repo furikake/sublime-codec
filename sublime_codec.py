@@ -315,5 +315,17 @@ class IdnCommand(sublime_plugin.TextCommand):
             return codec_idn.idna_encode
         elif 'idna_decode' == encode_type:
             return codec_idn.idna_decode
+        elif 'idna2008_encode' == encode_type:
+            return codec_idn.idna2008_encode
+        elif 'idna2008_decode' == encode_type:
+            return codec_idn.idna2008_decode
+        elif 'idna2008uts46_encode' == encode_type:
+            return codec_idn.idna2008uts46_encode
+        elif 'idna2008uts46_decode' == encode_type:
+            return codec_idn.idna2008uts46_decode
+        elif 'idna2008transitional_encode' == encode_type:
+            return codec_idn.idna2008transitional_encode
+        elif 'idna2008transitional_decode' == encode_type:
+            return codec_idn.idna2008transitional_decode
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
