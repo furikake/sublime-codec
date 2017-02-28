@@ -8,5 +8,5 @@ def encode_ensure_ascii(input):
     return encode(input, ensure_ascii=True)
 
 def decode(input):
-    result = json.loads(input, "UTF-8")
+    result = json.loads(input, encoding="UTF-8")
     return result
