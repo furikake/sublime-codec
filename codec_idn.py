@@ -6,7 +6,10 @@ if os.path.join(os.path.dirname(__file__), "idna") not in sys.path:
     # print('adding idna to sys.path')
     sys.path.append(os.path.join(os.path.dirname(__file__), "idna"))
 
-from . import idna
+try:
+    from . import idna
+except:
+    import idna
 
 def punycode_encode(s):
     return codecs.encode(s, 'punycode').decode('UTF-8')

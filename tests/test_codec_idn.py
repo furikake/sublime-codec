@@ -66,7 +66,7 @@ class TestIdna2008Uts46(unittest.TestCase):
         self.assertEquals(expected, codec_idn.idna2008uts46_encode(s))
 
     def test_decode(self):
-        expected = 'ÖBB.at'
+        expected = 'öbb.at'
         s = 'xn--bb-eka.at'
 
         self.assertEquals(expected, codec_idn.idna2008uts46_decode(s))
