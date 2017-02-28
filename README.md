@@ -1,4 +1,7 @@
 # Sublime Codec for ST2 and ST3
+
+[![Build Status](https://travis-ci.org/furikake/sublime-codec.svg?branch=master)](https://travis-ci.org/furikake/sublime-codec)
+
 Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work with:
 - RFC 4648:
     - encode/decode base64 (standard and url safe)
