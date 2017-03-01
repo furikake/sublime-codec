@@ -1,5 +1,5 @@
 [
-	{ "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Codec: Base64 encode" },
+    { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Codec: Base64 encode" },
     { "command": "base64_encode", "args": {"encode_type": "b64decode"}, "caption": "Codec: Base64 decode" },
     { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"}, "caption": "Codec: Base64 URL safe encode" },
     { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"}, "caption": "Codec: Base64 URL safe decode" },
@@ -26,14 +26,14 @@
     { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted-Printable decode" },
     { "command": "hex", "args": {"encode_type": "encode"}, "caption": "Codec: C-style Hex encode (ascii)" },
     { "command": "hex", "args": {"encode_type": "decode"}, "caption": "Codec: C-style Hex decode (ascii)" },
-    { "command": "idn", "args": {"encode_type": "punycode_encode"}, "caption": "Codec: Punycode encode" },
-    { "command": "idn", "args": {"encode_type": "punycode_decode"}, "caption": "Codec: Punycode decode" },
+    { "command": "idn", "args": {"encode_type": "punycode_encode"}, "caption": "Codec: RFC 3492 Punycode encode" },
+    { "command": "idn", "args": {"encode_type": "punycode_decode"}, "caption": "Codec: RFC 3492 Punycode decode" },
     { "command": "idn", "args": {"encode_type": "idna_encode"}, "caption": "Codec: IDN 2003 encode" },
     { "command": "idn", "args": {"encode_type": "idna_decode"}, "caption": "Codec: IDN 2003 decode" },
-    { "command": "idn", "args": {"encode_type": "idna2008_encode"}, "caption": "Codec: IDN 2008 encode" },
-    { "command": "idn", "args": {"encode_type": "idna2008_decode"}, "caption": "Codec: IDN 2008 decode" },
-    { "command": "idn", "args": {"encode_type": "idna2008uts46_encode"}, "caption": "Codec: IDNA 2008 (UTS46) encode" },
-    { "command": "idn", "args": {"encode_type": "idna2008uts46_decode"}, "caption": "Codec: IDNA 2008 (UTS46) decode" },
-    { "command": "idn", "args": {"encode_type": "idna2008transitional_encode"}, "caption": "Codec: IDNA 2008 (transitional) encode" },
-    { "command": "idn", "args": {"encode_type": "idna2008transitional_decode"}, "caption": "Codec: IDNA 2008 (transitional) decode" }
+    { "command": "idn", "args": {"encode_type": "idna2008_encode"}, "caption": "Codec: Punycode IDN 2008 encode" },
+    { "command": "idn", "args": {"encode_type": "idna2008_decode"}, "caption": "Codec: Punycode IDN 2008 decode" },
+    { "command": "idn", "args": {"encode_type": "idna2008uts46_encode"}, "caption": "Codec: Punycode IDNA 2008 (UTS46) encode" },
+    { "command": "idn", "args": {"encode_type": "idna2008uts46_decode"}, "caption": "Codec: Punycode IDNA 2008 (UTS46) decode" },
+    { "command": "idn", "args": {"encode_type": "idna2008transitional_encode"}, "caption": "Codec: Punycode IDNA 2008 (transitional) encode" },
+    { "command": "idn", "args": {"encode_type": "idna2008transitional_decode"}, "caption": "Codec: Punycode IDNA 2008 (transitional) decode" }
 ]
