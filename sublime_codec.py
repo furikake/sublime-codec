@@ -9,6 +9,7 @@ PYTHON = sys.version_info[0]
 if 3 == PYTHON:
     # Python 3 and ST3
     from urllib import parse
+    from . import codec_base62
     from . import codec_base64
     from . import codec_xml
     from . import codec_json
@@ -18,6 +19,7 @@ if 3 == PYTHON:
 else:
     # Python 2 and ST2
     import urllib
+    import codec_base62
     import codec_base64
     import codec_xml
     import codec_json
@@ -329,3 +331,35 @@ class IdnCommand(sublime_plugin.TextCommand):
             return codec_idn.idna2008transitional_decode
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
+
+"""
+Sublime Text 3 Base62 Codec
+"""
+class Base62EncodeCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='b62encode'):
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                if 'b62encode_int' == encode_type:
+                    encoded_string = codec_base62.b62encode_int(original_string.encode("UTF-8"))
+                elif 'b62decode_int' == encode_type:
+                    encoded_string = codec_base62.b62decode_int(original_string.encode("UTF-8"))
+                elif 'b62encode_inv_int' == encode_type:
+                    encoded_string = codec_base62.b62encode_inv_int(original_string.encode("UTF-8"))
+                elif 'b62decode_inv_int' == encode_type:
+                    encoded_string = codec_base62.b62decode_inv_int(original_string.encode("UTF-8"))
+                elif 'b62encode_hex' == encode_type:
+                    encoded_string = codec_base62.b62encode_hex(original_string.encode("UTF-8"))
+                elif 'b62decode_hex' == encode_type:
+                    encoded_string = codec_base62.b62decode_hex(original_string.encode("UTF-8"))
+                elif 'b62encode_inv_hex' == encode_type:
+                    encoded_string = codec_base62.b62encode_inv_hex(original_string.encode("UTF-8"))
+                elif 'b62decode_inv_hex' == encode_type:
+                    encoded_string = codec_base62.b62decode_inv_hex(original_string.encode("UTF-8"))
+                else:
+                    print("unsupported operation %s" % (encode_type,))
+                    break
+
+                self.view.replace(edit, region, encoded_string.decode("UTF-8"))

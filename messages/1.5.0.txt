@@ -1,0 +1,26 @@
+Codec v1.5.0
+============
+
+Added
+-----
+
+* Base62 with GMP style (0-9A-Za-z) and inverted style (0-9a-zA-Z).
+* Convert from Base16 (Hex) to Base62 and Integers to Base62 and back again.
+
+Example of why Base62 for a secure hash:
+```
+Take this input:       アンパンマン
+SHA2-256 Hex of input: 0a6c1abf617f23f37d1e08a685d81c235d5d9d52c808eb6c9e0d76023ec7b842
+Base62 of that Hex:    2teenSwtKZYMTfo9Yrqm2bWsU7k2nYgxXkFFdo4Ex46
+```
+
+Example with UUID or integers:
+```
+Take this input:                 744bc1f8359e417c97dfa3644163e209
+Get the Integer:                 154583803945672186691120648225072341513
+Base62 of that Integer (or Hex): 3XRjL5e7Ct9FmzqiFX3egb
+```
+
+Don't forget that you can add custom key bindings for your what you frequently use.  
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues

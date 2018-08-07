@@ -30,6 +30,7 @@ Provides a bunch of useful codecs as a Sublime Text plugin to allow you to work 
     - International Domain Names in Applications (IDNA)
 - RFC 3492:
     - Punycode
+- Base62
 
 ## Limitations
 - Note that this plugin assumes that your file is UTF-8 encoded.

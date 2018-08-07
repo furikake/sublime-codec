@@ -10,7 +10,7 @@
                 "children":
                 [
                     { 
-                        "caption": "BaseXX (16, 32, 64)",
+                        "caption": "BaseXX (16, 32, 62, 64)",
                         "mnemonic": "B",
                         "children":
                         [
@@ -18,6 +18,21 @@
                             { "command": "base64_encode", "args": {"encode_type": "b64decode"}, "caption": "Base64 decode" },
                             { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"}, "caption": "Base64 URL safe encode" },
                             { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"}, "caption": "Base64 URL safe decode" },
+                            {
+                                "caption": "Base62",
+                                "mnemonic": "2",
+                                "children":
+                                [
+                                    { "command": "base62_encode", "args": {"encode_type": "b62encode_int"}, "caption": "Codec: Base62 <- Integer" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62decode_int"}, "caption": "Codec: Base62 -> Integer" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62encode_hex"}, "caption": "Codec: Base62 <- Hex" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62decode_hex"}, "caption": "Codec: Base62 -> Hex" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62encode_inv_int"}, "caption": "Codec: Base62 (0-9a-zA-Z) <- Integer" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62decode_inv_int"}, "caption": "Codec: Base62 (0-9a-zA-Z) -> Integer" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62encode_inv_hex"}, "caption": "Codec: Base62 (0-9a-zA-Z) <- Hex" },
+                                    { "command": "base62_encode", "args": {"encode_type": "b62decode_inv_hex"}, "caption": "Codec: Base62 (0-9a-zA-Z) -> Hex" }
+                                ]
+                            },
                             { "command": "base64_encode", "args": {"encode_type": "b32encode"}, "caption": "Base32 encode" },
                             { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
                             { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
