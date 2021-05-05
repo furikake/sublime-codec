@@ -182,6 +182,36 @@ class SecureHashCommand(sublime_plugin.TextCommand):
                 self.view.replace(edit, region, str(encoded_string))
 
 """
+Sublime Text 3 Secure Hash Codec 
+
+doSomething(); hashes to SHA-256 as RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=
+
+>>> view.run_command('binary_secure_hash', {'secure_hash_type': 'sha256'})
+
+"""
+class BinarySecureHashCommand(sublime_plugin.TextCommand):
+
+    SECURE_HASH_TYPE = {
+        'sha256': 'sha256',
+        'sha384': 'sha384',
+        'sha512': 'sha512'
+    }
+
+    def run(self, edit, secure_hash_type='sha256'):
+        secure_hash_type = SecureHashCommand.SECURE_HASH_TYPE[secure_hash_type]
+        # print("using secure hash algorithm: " + secure_hash_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                # print("string: " + original_string)
+                hash_obj = hashlib.new(secure_hash_type)
+                hash_obj.update(original_string.encode("UTF-8"))
+                encoded_string = base64.b64encode(hash_obj.digest()).decode('UTF-8')
+                # print("string encoded: " + str(encoded_string))
+                self.view.replace(edit, region, str(encoded_string))
+
+"""
 Escapes and unescapes the 5 standard XML predefined entities
 
 <hello>T'was a dark & "stormy" night</hello>

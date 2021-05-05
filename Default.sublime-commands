@@ -1,5 +1,5 @@
 [
-	{ "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Codec: Base64 encode" },
+    { "command": "base64_encode", "args": {"encode_type": "b64encode"}, "caption": "Codec: Base64 encode" },
     { "command": "base64_encode", "args": {"encode_type": "b64decode"}, "caption": "Codec: Base64 decode" },
     { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64encode"}, "caption": "Codec: Base64 URL safe encode" },
     { "command": "base64_encode", "args": {"encode_type": "urlsafe_b64decode"}, "caption": "Codec: Base64 URL safe decode" },
@@ -25,6 +25,9 @@
     { "command": "secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "Codec: SHA-256" },
     { "command": "secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "Codec: SHA-384" },
     { "command": "secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "Codec: SHA-512" },
+    { "command": "binary_secure_hash", "args": {"secure_hash_type": "sha256"}, "caption": "Codec: SHA-256 (from binary/CSP style)" },
+    { "command": "binary_secure_hash", "args": {"secure_hash_type": "sha384"}, "caption": "Codec: SHA-384 (from binary/CSP style)" },
+    { "command": "binary_secure_hash", "args": {"secure_hash_type": "sha512"}, "caption": "Codec: SHA-512 (from binary/CSP style)" },
     { "command": "json", "args": {"encode_type": "encode"}, "caption": "Codec: JSON encode" },
     { "command": "json", "args": {"encode_type": "encode_ensure_ascii"}, "caption": "Codec: JSON encode as ASCII" },
     { "command": "json", "args": {"encode_type": "decode"}, "caption": "Codec: JSON decode" },

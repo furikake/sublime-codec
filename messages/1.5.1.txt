@@ -1,0 +1,28 @@
+Codec v1.5.1
+============
+
+Added
+-----
+
+* CSP style hash source.
+
+Example of why CSP style hash / base64 binary hash:
+
+```
+Take this input:           doSomething();
+Base64 of SHA-256 Digest:  RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=
+Base64 of SHA-384 Digest:  AoWO2NN+PGpt3TudulLbvGyFVcFxsRkrmg9v0ShvWAB8VuPrr1UBL1hyq+XDuBAD
+Base64 of SHA-512 Digest:  JmJZZcyblZQCHlZRsKDDtflAYSRkis0qyVDld8GYYgE33OHeq29ups1mbWGRG5YsUJA8XlUFLdqMMpEYX5m9WA==
+```
+
+To use in CSP you'll need to add the hash algorithm. E.g.
+
+```
+sha256-RFWPLDbv2BY+rCkDzsE+0fr8ylGr2R2faWMhq4lfEQc=
+sha384-AoWO2NN+PGpt3TudulLbvGyFVcFxsRkrmg9v0ShvWAB8VuPrr1UBL1hyq+XDuBAD
+sha512-JmJZZcyblZQCHlZRsKDDtflAYSRkis0qyVDld8GYYgE33OHeq29ups1mbWGRG5YsUJA8XlUFLdqMMpEYX5m9WA==
+```
+
+Don't forget that you can add custom key bindings for your what you frequently use.
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
