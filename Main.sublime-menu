@@ -35,8 +35,8 @@
                             },
                             { "command": "base64_encode", "args": {"encode_type": "b32encode"}, "caption": "Base32 encode" },
                             { "command": "base64_encode", "args": {"encode_type": "b32decode"}, "caption": "Base32 decode" },
-                            { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 encode" },
-                            { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 decode" }
+                            { "command": "base64_encode", "args": {"encode_type": "b16encode"}, "caption": "Base16 (hex) encode" },
+                            { "command": "base64_encode", "args": {"encode_type": "b16decode"}, "caption": "Base16 (hex) decode" }
                         ]
                     },
                     {
