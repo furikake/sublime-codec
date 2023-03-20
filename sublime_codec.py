@@ -87,7 +87,7 @@ class Base64EncodeCommand(sublime_plugin.TextCommand):
                 elif 'b16encode' == encode_type:
                     encoded_string = base64.b16encode(original_string.encode("UTF-8"))
                 elif 'b16decode' == encode_type:
-                    encoded_string = base64.b16decode(original_string.encode("UTF-8"))
+                    encoded_string = base64.b16decode(original_string.encode("UTF-8"), casefold=True)
                 else:
                     print("unsupported operation %s" % (encode_type,))
                     break
