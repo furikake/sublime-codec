@@ -1,0 +1,12 @@
+Codec v1.5.2
+============
+
+Added
+-----
+
+* Rename `Base16` to `Base16 (hex)` in menus/commands.
+* Add `Punycode` name to IDNA in menus/commands.
+
+Don't forget that you can add custom key bindings for your what you frequently use.
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
