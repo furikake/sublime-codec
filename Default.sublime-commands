@@ -37,6 +37,8 @@
     { "command": "quoted_printable", "args": {"encode_type": "decode"}, "caption": "Codec: Quoted-Printable decode" },
     { "command": "hex", "args": {"encode_type": "encode"}, "caption": "Codec: C-style Hex encode (ascii)" },
     { "command": "hex", "args": {"encode_type": "decode"}, "caption": "Codec: C-style Hex decode (ascii)" },
+    { "command": "hex_ascii", "args": {"encode_type": "decode"}, "caption": "Codec: Hex to Ascii" },
+    { "command": "hex_ascii", "args": {"encode_type": "encode"}, "caption": "Codec: Ascii to Hex" },
     { "command": "idn", "args": {"encode_type": "punycode_encode"}, "caption": "Codec: Punycode RFC 3492 encode" },
     { "command": "idn", "args": {"encode_type": "punycode_decode"}, "caption": "Codec: Punycode RFC 3492 decode" },
     { "command": "idn", "args": {"encode_type": "idna_encode"}, "caption": "Codec: Punycode IDNA 2003 encode" },

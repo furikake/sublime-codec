@@ -327,6 +327,25 @@ class HexCommand(sublime_plugin.TextCommand):
         else:
             raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
 
+class HexAsciiCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit, encode_type='encode'):
+        method = self.get_method(encode_type)
+
+        for region in selected_regions(self.view):
+            if not region.empty():
+                original_string = self.view.substr(region)
+                new_string = method(original_string)
+                self.view.replace(edit, region, new_string)
+
+    def get_method(self, encode_type):
+        if 'encode' == encode_type:
+            return codec_hex.encode_hex_ascii
+        elif 'decode' == encode_type:
+            return codec_hex.decode_hex_ascii
+        else:
+            raise NotImplementedError("unknown encoding type %s" % (str(encode_type),))
+
 class IdnCommand(sublime_plugin.TextCommand):
 
     def run(self, edit, encode_type='punycode_encode'):

@@ -45,7 +45,9 @@
                         "children":
                         [
                             { "command": "hex", "args": {"encode_type": "encode"}, "caption": "C-style Hex encode (ascii)" },
-                            { "command": "hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode (ascii)" }
+                            { "command": "hex", "args": {"encode_type": "decode"}, "caption": "C-style Hex decode (ascii)" },
+                            { "command": "hex_ascii", "args": {"encode_type": "decode"}, "caption": "Hex to Ascii" },
+                            { "command": "hex_ascii", "args": {"encode_type": "encode"}, "caption": "Ascii to Hex" }
                         ]
                     },
                     {
