@@ -1,6 +1,6 @@
 import re
 import codecs
-r_hex = re.compile(r'\\x([0-9a-fA-f]{2})')
+r_hex = re.compile(r'\\x([0-9a-fA-F]{2})')
 
 def decode_hex(hexstring):
     def func(x):
