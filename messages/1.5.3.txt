@@ -1,0 +1,11 @@
+Codec v1.5.3
+============
+
+Fixed
+-----
+
+* Use of deprecated `encoding` argument breaking JSON. Thanks @dpc00 for report & @Jah-yee for PR
+* Typo in C-style Hex's regex. Thanks @Jah-yee for report and PR
+
+
+Please report bugs here: https://github.com/furikake/sublime-codec/issues
